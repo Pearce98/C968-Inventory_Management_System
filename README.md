@@ -1,67 +1,138 @@
-A.   Create an application by completing the following tasks in C#:
+I. User Interface
 
-1.   Create a login form that has the ability to do the following:
+A.  Create a main form showing the following controls:
 
-a.   Determine a user’s location.
+•   buttons for "Add," "Modify," "Delete," "Search" for parts and products, and "Exit"
 
-b.   Translate login and error control messages (e.g., “The username and password do not match.”) into English and one additional language.
+•   lists for parts and products
 
-c.   Verify the correct username and password.
+•   text boxes for searching for parts and products
 
-2.   Provide the ability to add, update, and delete customer records.
-
-a.   Validate each of the following requirements for customer records:
-
-•    that a customer record includes name, address, and phone number fields
-
-•    that fields are trimmed and non-empty
-
-•    that the phone number field allows only digits and dashes
-
-b.   Add exception handling that can be used when performing each of the following operations for customer records:
-
-•    “add” operations
-
-•    “update” operations
-
-•    “delete database” operations
-
-3.   Provide the ability to add, update, and delete appointments, capture the type of appointment, and link to a specific customer record in the database.
-
-a.   Validate each of the following requirements for appointments:
-
-•    Require appointments to be scheduled during the business hours of 9:00 a.m. to 5:00 p.m., Monday–Friday, eastern standard time.
-
-•    Prevent the scheduling of overlapping appointments.
-
-b.   Add exception handling that can be used when performing each of the following operations for appointments:
-
-•    “add” operations
-
-•    “update” operations
-
-•    “delete database” operations
-
-4.   Create a calendar view feature, including the ability to view appointments on a specific day by selecting a day of the month from a calendar of the months of the year.
-
-5.   Provide the ability to automatically adjust appointment times based on user time zones and daylight saving time.
-
-6.   Create a function that generates an alert whenever a user who has an appointment within 15 minutes logs in to their account.
-
-7.   Create a function that allows users to generate the three reports listed using collection classes, incorporating a lambda expression into the code for each of the following reports:
-
-•    the number of appointment types by month
-
-•    the schedule for each user
-
-•    one additional report of your choice
-
-8.   Record the timestamp and the username of each login in a text file named “Login_History.txt,” ensuring that each new record is appended to the log file.
+•   title labels for parts, products, and the application title
 
 
+B.  Create an "Add Part" form showing the following controls:
 
-B.   Submit the project by doing the following:
+•   radio buttons for "In-House" and "Outsourced" parts
 
-1.   Export the project in Visual Studio format.
+•   buttons for "Save" and "Cancel"
 
-2.   Export your project from the IDE as a ZIP file.
+•   text boxes for ID, name, inventory level, price, max and min values, and company name or machine ID
+
+•   labels for ID, name, inventory level, price or cost, max and min values, the form title, and company name or machine ID
+
+
+C.  Create a "Modify Part" form with fields that populate with data from an existing part showing the following controls:
+
+•   radio buttons for "In-House" and "Outsourced" parts
+
+•   buttons for "Save" and "Cancel"
+
+•   text boxes for ID, name, inventory level, price, max and min values, and company name or machine ID
+
+•   labels for ID, name, inventory level, price, max and min values, the form title, and company name or machine ID
+
+
+D.  Create an "Add-Product" form showing the following controls:
+
+•   buttons for "Save," "Cancel," "Add" part, and "Delete" part
+
+•   text boxes for ID, name, inventory level, price, and max and min values
+
+•   labels for ID, name, inventory level, price, max and min values, and the form title
+
+•   a grid view for all parts
+
+•   a grid view for parts associated with the product
+
+•   a "Search" button and a text field with an associated list for displaying the results of the search
+
+
+E.  Create a "Modify Product" form with fields that populate with data from an existing product showing the following controls:
+
+•   buttons for "Save," "Cancel," "Add" part, and "Delete" part
+
+•   text boxes for ID, name, inventory level, price, and max and min values
+
+•   labels for ID, name, inventory level, price, max and min values, and the "all candidate parts" grid
+
+•   a grid view for parts associated with the product
+
+•   a "Search" button and a text box with an associated list for displaying the results of the search
+
+
+II. Classes
+
+F.  Create and implement the appropriate classes, methods, and properties as specified in the attached "UML Class Diagram."
+
+
+G.  Add the following behaviors to the main form using the classes, methods, and properties implemented in part F:
+
+•   redirect the user to the "Add Part," "Modify Part," "Add Product," or "Modify Product" forms
+
+•   delete a selected part or product from the grid view
+
+•   search for a part or product and display matching results
+
+•   exit the main form
+
+
+H.  Add the following behaviors to the part forms using the methods provided in the attached "UML Class Diagram":
+
+1.  Add the following behaviors to the "Add Part" form:
+
+•   select "In-House" or "Outsourced"
+
+•   enter name, inventory level, price, max and min values, and company name or machine ID
+
+•   save the data and then redirect to the main form
+
+•   cancel or exit out of this form and go back to the main form
+
+2.  Add the following behaviors to the "Modify Part" form:
+
+•   select "In-House" or "Outsourced"
+
+•   modify or change data values
+
+•   save modifications to the data and then redirect to the main form
+
+•   cancel or exit out of this form and go back to the main form
+
+
+I.  Add the following behaviors to the product forms using the methods provided in the attached "UML Class Diagram":
+
+1.  Add the following behaviors to the "Add Product" form:
+
+•   enter name, inventory level, price, and max and min values
+
+•   save the data and then redirect to the main form
+
+•   associate one or more parts with a product
+
+•   remove or disassociate a part from a product
+
+•   cancel or exit out of this form and go back to the main form
+
+2.  Add the following behaviors to the "Modify Product" form:
+
+•   modify or change data values
+
+•   save modifications to the data and then redirect to the main form
+
+•   associate one or more parts with a product
+
+•   remove or disassociate a part from a product
+
+•   cancel or exit out of this form and go back to the main form
+
+
+J.  Validate the user input to prevent the following four conditions:
+
+•   non-numeric values in textboxes that expect numeric values
+
+•   min from being greater than max; inventory from being outside the min and max bounds
+
+•   the user deleting a part that is associated with a product
+
+•   deleting a part or product without confirming it first
